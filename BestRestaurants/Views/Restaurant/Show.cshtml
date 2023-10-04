@@ -1,0 +1,11 @@
+@model BestRestaurants.Models.Restaurant;
+
+<h1>Restaurant</h1>
+
+<h2>@Html.DisplayNameFor(model=>model.Name): @Html.DisplayFor(model=> model.Name)</h2>
+<ul>
+  <li>@Html.DisplayNameFor(model=>model.City): @Html.DisplayFor(model=> model.City)</li>
+  <li>@Html.DisplayNameFor(model=>model.Cuisine): @Html.DisplayFor(model=> model.Cuisine)</li>
+</ul>
+
+<p>@Html.ActionLink("Back to List", "Index")</p>

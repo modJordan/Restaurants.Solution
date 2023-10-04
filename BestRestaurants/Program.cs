@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Restaurants.Models;
+using BestRestaurants.Models;
 
 namespace BestRestaurants
 {
@@ -13,7 +13,7 @@ namespace BestRestaurants
 
       builder.Services.AddControllersWithViews();
 
-      builder.Services.AddDbContext<ToDoListContext>(
+      builder.Services.AddDbContext<BestRestaurantsContext>(
                         dbContextOptions => dbContextOptions
                           .UseMySql(
                             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
@@ -22,7 +22,7 @@ namespace BestRestaurants
                       );
       WebApplication app = builder.Build();
 
-    //   app.UseDeveloperExceptionPage();
+      app.UseDeveloperExceptionPage();
       app.UseHttpsRedirection();
 
       app.UseRouting();
